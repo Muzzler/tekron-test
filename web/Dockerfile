@@ -1,5 +1,5 @@
 # BUILD
-FROM golang:ubuntu as builder
+FROM golang:alpine as builder
 
 COPY dispatcher.go .
 RUN go build dispatcher.go
@@ -7,7 +7,7 @@ RUN go build dispatcher.go
 # RUN
 FROM alpine
 
-EXPOSE 808
+EXPOSE 8089
 CMD ["/dispatcher"]
 
 COPY --from=builder /go/dispatcher /
