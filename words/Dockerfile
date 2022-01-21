@@ -13,7 +13,7 @@ RUN mvn verify
 FROM adoptopenjdk:8-jre
 
 ENTRYPOINT ["java", "-Xmx8m", "-Xms8m", "-jar", "/app/words.jar"]
-EXPOSE 8086
+EXPOSE 8085
 
 WORKDIR /app
 COPY --from=build /home/lab/target .
