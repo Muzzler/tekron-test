@@ -1,5 +1,5 @@
 # BUILD
-FROM golang:alpine as builder
+FROM golang:alpine:latest as builder
 
 COPY dispatcher.go .
 RUN go build dispatcher.go
